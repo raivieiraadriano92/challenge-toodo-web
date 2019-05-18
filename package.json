@@ -7,9 +7,17 @@
     "@types/node": "12.0.2",
     "@types/react": "16.8.17",
     "@types/react-dom": "16.8.4",
+    "apisauce": "^1.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
     "react-scripts": "3.0.1",
+    "reactotron-react-js": "^3.2.1",
+    "reactotron-redux": "^3.1.0",
+    "reactotron-redux-saga": "^4.2.2",
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.2",
+    "typesafe-actions": "^4.3.0",
     "typescript": "3.4.5"
   },
   "scripts": {
@@ -32,5 +40,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-redux": "^7.0.9",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-import-resolver-typescript": "^1.1.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.13.0",
+    "prettier": "^1.17.1"
   }
 }
