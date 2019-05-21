@@ -1,6 +1,5 @@
 import { Reducer } from "redux";
 import { Todo, TodosState, TodosTypes } from "./types";
-import { getMaxListeners } from "cluster";
 
 const INITIAL_STATE: TodosState = {
   list: [
@@ -13,7 +12,10 @@ const INITIAL_STATE: TodosState = {
 const reducer: Reducer<TodosState> = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case TodosTypes.TODO_ADD:
-      return { ...state, list: [action.payload.todo, ...state.list] };
+      return {
+        ...state,
+        list: [action.payload.todo, ...state.list]
+      };
     case TodosTypes.TODO_REMOVE:
       return {
         ...state,
