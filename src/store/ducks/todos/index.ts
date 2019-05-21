@@ -3,9 +3,9 @@ import { Todo, TodosState, TodosTypes } from "./types";
 
 const INITIAL_STATE: TodosState = {
   list: [
-    { id: 1, name: "teste 1" },
-    { id: 2, name: "teste 2" },
-    { id: 3, name: "teste 3" }
+    // { id: 1, name: "teste 1", done: false },
+    // { id: 2, name: "teste 2", done: false },
+    // { id: 3, name: "teste 3", done: false }
   ]
 };
 
@@ -19,9 +19,15 @@ const reducer: Reducer<TodosState> = (state = INITIAL_STATE, action) => {
     case TodosTypes.TODO_REMOVE:
       return {
         ...state,
-        list: action.payload.data.filter(
-          (todo: Todo) => todo.id !== action.payload.id
-        )
+        list: state.list.filter((todo: Todo) => todo.id !== action.payload.id)
+      };
+    case TodosTypes.TODO_TOGGLE:
+      return {
+        ...state,
+        list: state.list.map((todo: Todo) => ({
+          ...todo,
+          done: todo.id === action.payload.id ? !todo.done : todo.done
+        }))
       };
     default:
       return state;
