@@ -1,7 +1,7 @@
 import { action } from "typesafe-actions";
-import { TodosTypes, Todo } from "./types";
+import { TodosTypes, TodoNew } from "./types";
 
-export const todoAdd = (todo: Todo) => action(TodosTypes.TODO_ADD, { todo });
+export const todoAdd = (todo: TodoNew) => action(TodosTypes.TODO_ADD, { todo });
 
 export const todoRemove = (id: number) =>
   action(TodosTypes.TODO_REMOVE, { id });

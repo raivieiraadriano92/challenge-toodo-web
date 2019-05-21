@@ -3,11 +3,11 @@ import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { Layout, Menu, Icon } from "antd";
 
-import { Todo } from "../../store/ducks/todos/types";
+import { TodoNew } from "../../store/ducks/todos/types";
 import * as TodosActions from "../../store/ducks/todos/actions";
 
 interface StateProps {
-  todoAdd(todo: Todo): void;
+  todoAdd(todo: TodoNew): void;
 }
 
 type Props = StateProps;
@@ -19,12 +19,7 @@ const Header = ({ todoAdd }: Props) => (
         <Icon type="unordered-list" />
         Todos
       </Menu.Item>
-      <Menu.Item
-        key="add"
-        onClick={() =>
-          todoAdd({ id: Math.random(), name: "teste", done: false })
-        }
-      >
+      <Menu.Item key="add" onClick={() => todoAdd({ name: "teste" })}>
         <Icon type="plus" />
         Add
       </Menu.Item>

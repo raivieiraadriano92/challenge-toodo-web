@@ -14,7 +14,10 @@ const reducer: Reducer<TodosState> = (state = INITIAL_STATE, action) => {
     case TodosTypes.TODO_ADD:
       return {
         ...state,
-        list: [action.payload.todo, ...state.list]
+        list: [
+          { ...action.payload.todo, id: Math.random(), done: false },
+          ...state.list
+        ]
       };
     case TodosTypes.TODO_REMOVE:
       return {

@@ -16,6 +16,10 @@ export interface Todo {
   done: boolean;
 }
 
+export interface TodoNew {
+  name: string;
+}
+
 /**
  * State type
  */
