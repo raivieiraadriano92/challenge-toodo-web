@@ -1,36 +1,40 @@
 import React from "react";
-import { connect } from "react-redux";
-import { bindActionCreators, Dispatch } from "redux";
 import { Layout, Menu, Icon } from "antd";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 
-import { TodoNew } from "../../store/ducks/todos/types";
-import * as TodosActions from "../../store/ducks/todos/actions";
+const Header = ({ history }: RouteComponentProps) => {
+  const handleNavigation = ({ key }: any) => {
+    let path = "/";
+    switch (key) {
+      case "add":
+        path += "add";
+        break;
+    }
 
-interface StateProps {
-  todoAdd(todo: TodoNew): void;
-}
+    history.push(path);
+  };
 
-type Props = StateProps;
+  console.log(history);
 
-const Header = ({ todoAdd }: Props) => (
-  <Layout.Header>
-    <Menu theme="dark" mode="horizontal" style={{ lineHeight: "64px" }}>
-      <Menu.Item key="todos">
-        <Icon type="unordered-list" />
-        Todos
-      </Menu.Item>
-      <Menu.Item key="add" onClick={() => todoAdd({ name: "teste" })}>
-        <Icon type="plus" />
-        Add
-      </Menu.Item>
-    </Menu>
-  </Layout.Header>
-);
+  return (
+    <Layout.Header>
+      <Menu
+        theme="dark"
+        mode="horizontal"
+        style={{ lineHeight: "64px" }}
+        onClick={handleNavigation}
+      >
+        <Menu.Item key="todos">
+          <Icon type="unordered-list" />
+          Todos
+        </Menu.Item>
+        <Menu.Item key="add">
+          <Icon type="plus" />
+          Add
+        </Menu.Item>
+      </Menu>
+    </Layout.Header>
+  );
+};
 
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(TodosActions, dispatch);
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(Header);
+export default withRouter(Header);

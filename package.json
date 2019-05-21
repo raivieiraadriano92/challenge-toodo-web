@@ -9,6 +9,7 @@
     "@types/react-dom": "16.8.4",
     "antd": "^3.18.2",
     "apisauce": "^1.0.2",
+    "formik": "^1.5.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
@@ -19,7 +20,8 @@
     "redux": "^4.0.1",
     "styled-components": "^4.2.0",
     "typesafe-actions": "^4.3.0",
-    "typescript": "3.4.5"
+    "typescript": "3.4.5",
+    "yup": "^0.27.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,6 +46,8 @@
   },
   "devDependencies": {
     "@types/react-redux": "^7.0.9",
+    "@types/react-router-dom": "^4.3.3",
+    "@types/yup": "^0.26.13",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
     "eslint-config-airbnb": "^17.1.0",
