@@ -21,7 +21,7 @@ const App: React.FC = () => (
         <Content>
           <Route exact path="/" component={TodoList} />
           <Route exact path="/add" component={TodoForm} />
-          <Route exact path="/add/{id}" component={TodoForm} />
+          <Route exact path="/edit/:id" component={TodoForm} />
         </Content>
         <Footer />
       </Layout>

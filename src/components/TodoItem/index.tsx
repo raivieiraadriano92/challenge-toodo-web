@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { List, Typography, Button, Checkbox } from "antd";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 
 import { Todo } from "../../store/ducks/todos/types";
 import { ApplicationState } from "../../store";
@@ -13,12 +14,16 @@ interface StateProps {
   todoToggle(id: number): void;
 }
 
-type Props = StateProps;
+type Props = StateProps & RouteComponentProps;
 
-const TodoItem = ({ todo, todoRemove, todoToggle }: Props) => (
+const TodoItem = ({ history, todo, todoRemove, todoToggle }: Props) => (
   <List.Item
     actions={[
-      <Button icon="edit" onClick={() => todoRemove(todo.id)} shape="circle" />,
+      <Button
+        icon="edit"
+        onClick={() => history.push(`/edit/${todo.id}`)}
+        shape="circle"
+      />,
       <Button
         icon="delete"
         onClick={() => todoRemove(todo.id)}
@@ -30,7 +35,11 @@ const TodoItem = ({ todo, todoRemove, todoToggle }: Props) => (
       avatar={
         <Checkbox onChange={() => todoToggle(todo.id)} value={todo.done} />
       }
-      title={<Typography.Text delete={todo.done}>{todo.name}</Typography.Text>}
+      title={
+        <Typography.Text delete={todo.done} disabled={todo.done}>
+          {todo.name}
+        </Typography.Text>
+      }
     />
   </List.Item>
 );
@@ -45,4 +54,4 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TodoItem);
+)(withRouter(TodoItem));

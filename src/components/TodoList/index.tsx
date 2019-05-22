@@ -22,7 +22,7 @@ const TodoList = ({ todos }: Props) => {
     <List
       itemLayout="horizontal"
       dataSource={todos}
-      renderItem={(todo: Todo) => <TodoItem todo={todo} />}
+      renderItem={(todo: any) => <TodoItem todo={todo} />}
     />
   );
 };

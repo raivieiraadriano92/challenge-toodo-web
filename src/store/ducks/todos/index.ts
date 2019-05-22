@@ -19,6 +19,14 @@ const reducer: Reducer<TodosState> = (state = INITIAL_STATE, action) => {
           ...state.list
         ]
       };
+    case TodosTypes.TODO_EDIT:
+      return {
+        ...state,
+        list: [
+          { ...action.payload.todo },
+          ...state.list.filter(item => item.id !== action.payload.todo.id)
+        ]
+      };
     case TodosTypes.TODO_REMOVE:
       return {
         ...state,

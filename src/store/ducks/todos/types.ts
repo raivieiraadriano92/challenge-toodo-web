@@ -3,6 +3,7 @@
  */
 export enum TodosTypes {
   TODO_ADD = "@todos/TODO_ADD",
+  TODO_EDIT = "@todos/TODO_EDIT",
   TODO_REMOVE = "@todos/TODO_REMOVE",
   TODO_TOGGLE = "@todos/TODO_TOGGLE"
 }
