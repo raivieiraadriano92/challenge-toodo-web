@@ -1,0 +1,6 @@
+[submodule "src/--name"]
+	path = src/--name
+	url = git@github.com:raivieiraadriano92/challenge-toodo-core.git
+[submodule "src/core"]
+	path = src/core
+	url = git@github.com:raivieiraadriano92/challenge-toodo-core.git
