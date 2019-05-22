@@ -18,6 +18,7 @@
     "reactotron-react-js": "^3.2.1",
     "reactotron-redux": "^3.1.0",
     "redux": "^4.0.1",
+    "redux-persist": "^5.10.0",
     "styled-components": "^4.2.0",
     "typesafe-actions": "^4.3.0",
     "typescript": "3.4.5",
