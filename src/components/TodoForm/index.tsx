@@ -6,9 +6,9 @@ import { Formik, Form, Field, FieldProps, FormikProps } from "formik";
 import * as Yup from "yup";
 import { RouteComponentProps } from "react-router-dom";
 
-import { ApplicationState } from "../../store";
-import { Todo, TodoNew } from "../../store/ducks/todos/types";
-import * as TodosActions from "../../store/ducks/todos/actions";
+import { ApplicationState } from "../../core/store";
+import { Todo, TodoNew } from "../../core/store/ducks/todos/types";
+import * as TodosActions from "../../core/store/ducks/todos/actions";
 
 import { Col } from "./styles";
 

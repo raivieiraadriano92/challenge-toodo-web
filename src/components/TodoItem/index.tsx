@@ -4,9 +4,9 @@ import { bindActionCreators, Dispatch } from "redux";
 import { List, Typography, Button, Checkbox } from "antd";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 
-import { Todo } from "../../store/ducks/todos/types";
-import { ApplicationState } from "../../store";
-import * as TodosActions from "../../store/ducks/todos/actions";
+import { Todo } from "../../core/store/ducks/todos/types";
+import { ApplicationState } from "../../core/store";
+import * as TodosActions from "../../core/store/ducks/todos/actions";
 
 interface StateProps {
   todo: Todo;

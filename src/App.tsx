@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "antd/dist/antd.css";
 
-import store from "./store";
+import store from "./core/store";
 import { Content, GlobalStyle, Layout } from "./styles";
 
 import Footer from "./components/Footer";

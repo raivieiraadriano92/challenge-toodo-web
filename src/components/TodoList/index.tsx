@@ -2,8 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { Empty } from "antd";
 
-import { Todo } from "../../store/ducks/todos/types";
-import { ApplicationState } from "../../store";
+import { Todo } from "../../core/store/ducks/todos/types";
+import { ApplicationState } from "../../core/store";
 
 import TodoItem from "../TodoItem";
 
