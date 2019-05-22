@@ -87,7 +87,7 @@ const TodoForm = ({
                     </div>
                   )}
                 />
-                <Button type="primary" htmlType="submit">
+                <Button block type="primary" htmlType="submit">
                   Save
                 </Button>
               </Form>
