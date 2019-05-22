@@ -43,12 +43,12 @@ const TodoForm = ({
     history.push("/");
   };
 
-  let refForm: FormikProps<FormValues>;
+  let refForm: Formik<FormValues> | null;
 
   useEffect(() => {
     if (id) {
       const todo: Todo | undefined = todos.find(item => item.id === +id);
-      if (todo) {
+      if (todo && refForm) {
         refForm.resetForm(todo);
       }
     }
@@ -59,40 +59,40 @@ const TodoForm = ({
       <Col span={8} offset={8}>
         <Typography.Title>{`${id ? "Edit" : "New"} Todo`}</Typography.Title>
         <Formik
+          ref={ref => {
+            refForm = ref;
+          }}
           initialValues={{ name: "" }}
           validationSchema={Yup.object().shape({
             name: Yup.string().required("Required")
           })}
           onSubmit={handleSubmit}
-          render={(formikBag: FormikProps<FormValues>) => {
-            refForm = formikBag;
-            return (
-              <Form>
-                <Field
-                  name="name"
-                  render={({ field, form }: FieldProps<FormValues>) => (
-                    <div>
-                      <FormAntd.Item
-                        validateStatus={
-                          form.touched.name &&
-                          form.errors.name &&
-                          form.errors.name
-                            ? "error"
-                            : ""
-                        }
-                        help={form.errors.name}
-                      >
-                        <Input {...field} placeholder="Name" />
-                      </FormAntd.Item>
-                    </div>
-                  )}
-                />
-                <Button block type="primary" htmlType="submit">
-                  Save
-                </Button>
-              </Form>
-            );
-          }}
+          render={() => (
+            <Form>
+              <Field
+                name="name"
+                render={({ field, form }: FieldProps<FormValues>) => (
+                  <div>
+                    <FormAntd.Item
+                      validateStatus={
+                        form.touched.name &&
+                        form.errors.name &&
+                        form.errors.name
+                          ? "error"
+                          : ""
+                      }
+                      help={form.errors.name}
+                    >
+                      <Input {...field} placeholder="Name" />
+                    </FormAntd.Item>
+                  </div>
+                )}
+              />
+              <Button block type="primary" htmlType="submit">
+                Save
+              </Button>
+            </Form>
+          )}
         />
       </Col>
     </Row>
