@@ -7,6 +7,8 @@ As this project has a web app and a native app that has the same business rule, 
 ## Libraries
 
 - [React.js](https://reactjs.org)
+- [Ant Design of React](https://ant.design/docs/react/introduce)
+- [Styled Components](https://www.styled-components.com/)
 - [Formik](https://jaredpalmer.com/formik/)
 - [Yup](https://github.com/jquense/yup)
 - [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
