@@ -20,17 +20,21 @@ As this project has a web app and a native app that has the same business rule, 
 
 - [Repository](https://github.com/raivieiraadriano92/challenge-toodo-core)
 
+## Native App
+
+- [Repository](https://github.com/raivieiraadriano92/challenge-toodo-app)
+
 ## Quickstart
 
 Clone the project:
 
-### `git clone --recursive https://github.com/raivieiraadriano92/challenge-toodo-web.git`
+`git clone --recursive https://github.com/raivieiraadriano92/challenge-toodo-web.git`
 
 In the project directory, you can run:
 
-### `yarn install`
+`yarn install`
 
-### `yarn start`
+`yarn start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
