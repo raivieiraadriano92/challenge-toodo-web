@@ -57,7 +57,7 @@ const TodoForm = ({
   return (
     <Row>
       <Col span={8} offset={8}>
-        <Typography.Title>{`${id ? "Edit" : "New"} Todo`}</Typography.Title>
+        <Typography.Title>{`${id ? "Edit" : "New"} ToDo`}</Typography.Title>
         <Formik
           ref={ref => {
             refForm = ref;

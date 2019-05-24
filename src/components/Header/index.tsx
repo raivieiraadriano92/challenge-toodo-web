@@ -13,7 +13,7 @@ const Header = ({ history }: RouteComponentProps) => (
     >
       <Menu.Item key="/">
         <Icon type="unordered-list" />
-        Todos
+        List
       </Menu.Item>
       <Menu.Item key="/add">
         <Icon type="plus" />

@@ -33,7 +33,11 @@ const TodoItem = ({ history, todo, todoRemove, todoToggle }: Props) => (
   >
     <List.Item.Meta
       avatar={
-        <Checkbox onChange={() => todoToggle(todo.id)} value={todo.done} />
+        <Checkbox
+          checked={todo.done}
+          onChange={() => todoToggle(todo.id)}
+          value={todo.done}
+        />
       }
       title={
         <Typography.Text delete={todo.done} disabled={todo.done}>
