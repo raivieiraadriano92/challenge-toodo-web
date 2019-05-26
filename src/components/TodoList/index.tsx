@@ -20,6 +20,14 @@ const TodoList = ({ todos }: Props) => {
   const [list, setList] = useState(todos);
 
   useEffect(() => {
+    filterList();
+  }, [filter]);
+
+  useEffect(() => {
+    filterList();
+  }, [todos]);
+
+  const filterList = () =>
     setList(
       todos.filter((todo: Todo) => {
         if (filter === "done") return todo.done;
@@ -29,7 +37,6 @@ const TodoList = ({ todos }: Props) => {
         return true;
       })
     );
-  }, [filter]);
 
   return (
     <Fragment>
